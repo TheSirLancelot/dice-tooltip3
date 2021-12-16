@@ -1,5 +1,5 @@
-A [FoundryVTT](http://foundryvtt.com/) module that shows dice and bonus information when hovering over 
-an item/spell/ability/skills/etc. in an actor sheet. 
+A [FoundryVTT](http://foundryvtt.com/) module that shows dice and bonus information when hovering over
+an item/spell/ability/skills/etc. in an actor sheet.
 
 <b>Only works with the D&D5E system</b>
 
@@ -26,7 +26,7 @@ This has been tested with the following sheets:
 Your mileage may vary with other sheets.
 
 
-Localization support is provided. Currently, only English is supported, but pull requests are welcome for 
+Localization support is provided. Currently, only English is supported, but pull requests are welcome for
 other languages.
 
 # Installation
@@ -36,12 +36,12 @@ other languages.
 1. Go to Foundry's Setup screen
 1. Go to the "Add-On Modules" tab
 1. Press "Install Module"
-1. Paste `Dice Tooltip2 - DnD5e` into the text field
+1. Paste `Dice Tooltip3 - DnD5e` into the text field (this prob won't work)
 1. Press "Install"
 
 ## Alternative
 
-1. Download [this zip file](https://github.com/trev33b/dice-tooltip2/raw/master/dist/dice-tooltip2.zip)
+1. Download [this zip file](https://github.com/TheSirLancelot/dice-tooltip2/raw/master/dist/dice-tooltip2.zip)
 2. Extract it into the `<FoundryVTT directory>/data/modules`-folder
 
 # Compatibility
@@ -50,9 +50,6 @@ Only Firefox & Chrome are supported.
 
 # Attribution & History
 
-This module was originally written by Steffan Poulsen (https://github.com/SteffanPoulsen/dice-tooltip).
+This module was originally written by Steffan Poulsen (https://github.com/SteffanPoulsen/dice-tooltip), and then again by Trevor Bechtel (https://github.com/trev33b/dice-tooltip2).
 
-His work appeared to be broken with the release of Foundry 0.8 (new Dice API) and updates to the Tidy 5e Sheets 
-and it didn't look like it was going to get fixed anytime soon.  So I forked his
-work to this location, fixed those main issues, plus make several enhancements
-to the presentation of the tooltip and the code itself.
+Trevor did great work, but it only worked with dnd5e. I needed it to work for sw5e, so here we are.

@@ -12,12 +12,12 @@
     "compatibleCoreVersion": "0.8.9",
     "styles": ["/styles/dicetooltip.css"],
     "scripts": ["./scripts/dicetooltip.js"],
-    "url": "https://github.com/TheSirLancelot/dice-tooltip2",
-    "manifest": "https://github.com/TheSirLancelot/dice-tooltip2/raw/master/src/module.json",
-    "download": "https://github.com/TheSirLancelot/dice-tooltip2/raw/master/dist/dice-tooltip2.zip",
-    "readme": "https://github.com/TheSirLancelot/dice-tooltip2/raw/master/src/README.md",
-    "changelog": "https://github.com/TheSirLancelot/dice-tooltip2/raw/master/src/CHANGELOG.md",
-    "bugs": "https://github.com/TheSirLancelot/dice-tooltip2/issues",
+    "url": "https://github.com/TheSirLancelot/dice-tooltip3",
+    "manifest": "https://github.com/TheSirLancelot/dice-tooltip3/raw/master/src/module.json",
+    "download": "https://github.com/TheSirLancelot/dice-tooltip3/raw/master/dist/dice-tooltip2.zip",
+    "readme": "https://github.com/TheSirLancelot/dice-tooltip3/raw/master/src/README.md",
+    "changelog": "https://github.com/TheSirLancelot/dice-tooltip3/raw/master/src/CHANGELOG.md",
+    "bugs": "https://github.com/TheSirLancelot/dice-tooltip3/issues",
 
 
     "system": ["sw5e"],

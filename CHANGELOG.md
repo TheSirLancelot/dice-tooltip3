@@ -1,3 +1,6 @@
+# 3.0.0
+* Added support for SW5E
+
 # 2.0.0
 * Forked from https://github.com/SteffanPoulsen/dice-tooltip to https://github.com/trev33b/dice-tooltip2
 * Renamed module: dice-tooltip -> dice-tooltip2
@@ -5,7 +8,7 @@
 * Improved the tooltip presentation (tightened padding, inverted coloring to match other tooltips, add transparency)
 * Fixed dice formula presentation to not show extra +'s
 * Changed Short Rest tooltip to show remaining hit dice that can be used
-* Removed unnecessary special handling for Tidy5e (Player & NPC) and Sky's Alt 5e sheets 
+* Removed unnecessary special handling for Tidy5e (Player & NPC) and Sky's Alt 5e sheets
 * Lots of code cleanup (warnings & patterns) and wrapped with WebStorm project
 * Added localization support and provided translations for English
 
@@ -20,7 +23,7 @@
 
 # 1.0.6
 
-* Redid the hit-dice tooltip code, now works for multi-classing as well. 
+* Redid the hit-dice tooltip code, now works for multi-classing as well.
 
 # 1.0.5
 

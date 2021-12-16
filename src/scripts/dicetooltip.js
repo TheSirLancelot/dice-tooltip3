@@ -254,7 +254,7 @@ function formatDiceParts(rollData) {
 function rollFakeAttack(item) {
   const itemData = item.data.data;
   const actorData = item.actor.data.data;
-  const flags = item.actor.data.flags.dnd5e || {};
+  const flags = item.actor.data.flags.sw5e || {};
   if ( !item.hasAttack ) {
     throw new Error(game.i18n.localize("DiceToolTip2.ErrorItemWithoutAttack"));
   }
@@ -287,7 +287,7 @@ function rollFakeAttack(item) {
   }
 
   // Elven Accuracy
-  if ( ["weapon", "spell"].includes(item.data.type) ) {
+  if ( ["weapon", "power"].includes(item.data.type) ) {
     if (flags.elvenAccuracy && ["dex", "int", "wis", "cha"].includes(item.abilityMod)) {
       rollConfig.elvenAccuracy = true;
     }
@@ -314,8 +314,8 @@ function rollFakeDamage(item, {spellLevel=null, versatile=false}={}) {
   // Define Roll parts
   const parts = itemData.damage.parts.map(d => d[0]);
   if ( versatile && itemData.damage.versatile ) parts[0] = itemData.damage.versatile;
-  if ( (item.data.type === "spell") ) {
-    if ( (itemData.scaling.mode === "cantrip") ) {
+  if ( (item.data.type === "power") ) {
+    if ( (itemData.scaling.mode === "atwill") ) {
       const lvl = item.actor.data.type === "character" ? actorData.details.level : actorData.details.spellLevel;
       item._scaleCantripDamage(parts, lvl, itemData.scaling.formula );
     } else if ( spellLevel && (itemData.scaling.mode === "level") && itemData.scaling.formula ) {
@@ -362,14 +362,14 @@ function d20RollFake({parts=[], data={}, title=null,
     // Handle advantage
     if ( adv === 1 ) {
       nd = elvenAccuracy ? 3 : 2;
-      flavor += ` (${game.i18n.localize("DND5E.Advantage")})`;
+      flavor += ` (${game.i18n.localize("SW5E.Advantage")})`;
       mods += "kh";
     }
 
     // Handle disadvantage
     else if ( adv === -1 ) {
       nd = 2;
-      flavor += ` (${game.i18n.localize("DND5E.Disadvantage")})`;
+      flavor += ` (${game.i18n.localize("SW5E.Disadvantage")})`;
       mods += "kl";
     }
 
@@ -390,7 +390,7 @@ function d20RollFake({parts=[], data={}, title=null,
       const abl = data.abilities[data.ability];
       if ( abl ) {
         data.mod = abl.mod;
-        flavor += ` (${CONFIG.DND5E.abilities[data.ability]})`;
+        flavor += ` (${CONFIG.SW5E.abilities[data.ability]})`;
       }
     }
 
@@ -403,7 +403,7 @@ function d20RollFake({parts=[], data={}, title=null,
 
     // If reliable talent was applied, add it to the flavor text
     if ( reliableTalent && roll.dice[0].total < 10 ) {
-      flavor += ` (${game.i18n.localize("DND5E.FlagsReliableTalent")})`;
+      flavor += ` (${game.i18n.localize("SW5E.FlagsReliableTalent")})`;
     }
 
     return roll;
@@ -426,10 +426,10 @@ function damageRollFake({parts, actor, data, title, flavor, critical=false}) {
 
     // Modify the damage formula for critical hits
     if ( crit === true ) {
-      let add = (actor && actor.getFlag("dnd5e", "savageAttacks")) ? 1 : 0;
+      let add = (actor && actor.getFlag("sw5e", "savageAttacks")) ? 1 : 0;
       let mult = 2;
       roll = roll.alter(mult, add);
-      flavor = `${flavor} (${game.i18n.localize("DND5E.Critical")})`;
+      flavor = `${flavor} (${game.i18n.localize("SW5E.Critical")})`;
     }
 
     return roll;
